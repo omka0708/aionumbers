@@ -1,4 +1,4 @@
-import aionumbers
+from aionumbers import get_matched_numbers
 import asyncio
 
 
@@ -8,7 +8,7 @@ async def main():
                          ("https://www.kb123.ru/", ["84955932222", "84951112233", "84955931914", "84955944444"]),
                          ("https://www.mirea.ru/", ["84996008080"]), ]
 
-    tasks = [aionumbers.get_matched_numbers(link, numbers) for link, numbers in links_and_numbers]
+    tasks = [get_matched_numbers(link, numbers) for link, numbers in links_and_numbers]
     print(await asyncio.gather(*tasks))
 
 
