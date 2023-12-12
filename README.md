@@ -1,7 +1,9 @@
 # aionumbers
-Phone number recognition module.
+Phone number recognition module. Used stack: *asyncio*, *aiohttp*, *re* (regex). 
 ## What is this?
-Python module for checking current phone numbers on the website based on those entered by the user (list).
+Python module for parsing russian phone numbers on websites.
+
+Functions output strings in 8XXXYYYYYYY format.
 ## How to use?
 Install aiohttp:
 
@@ -10,5 +12,9 @@ Install aiohttp:
 If your Python version < 3.4 also use:
 
     pip install asyncio
+
+Functions expect link (or list of links) and parameter `auto`.
+
+When `auto=True`, the function automatically fills city code with *495* (Moscow) if it is missing.
     
 Look in `main.py` file how module `aionumbers` should be used.
