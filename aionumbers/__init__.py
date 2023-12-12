@@ -1,1 +1,1 @@
-from .aionumbers import get_matched_numbers
+from .aionumbers import get_phone_numbers_from_url_aio, get_phone_numbers_from_urls_aio, get_phone_numbers_from_urls
