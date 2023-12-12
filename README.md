@@ -16,5 +16,7 @@ If your Python version < 3.4 also use:
 Functions expect link (or list of links) and parameter `auto`.
 
 When `auto=True`, the function automatically fills city code with *495* (Moscow) if it is missing.
+
+Otherwise (`auto=False`), the number without city code is not included in the result.
     
 Look in `main.py` file how module `aionumbers` should be used.
