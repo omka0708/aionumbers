@@ -13,7 +13,7 @@ PATTERN = REGEX_LOOKBEHIND + REGEX_PHONE_CODES + REGEX_MAIN_NUMBERS + REGEX_LOOK
 
 async def get_html(url: str) -> str:
     """
-    Function for getting html plain text from url
+    Function for getting html plain text from url.
     :param url: Line with link to HTML document.
     :return: HTML document.
     """
@@ -24,9 +24,9 @@ async def get_html(url: str) -> str:
 
 async def get_phone_numbers_from_url_aio(url: str, auto: bool = True) -> dict[str, tuple]:
     """
-    Function for getting numbers from one url address
+    Function for getting numbers from one url address.
     :param url: Line with link to HTML document.
-    :param auto: Auto-add Moscow city code.
+    :param auto: Auto-add Moscow city code *495*.
     :return: URL with parsed numbers.
     """
     html = await get_html(url)
@@ -50,7 +50,8 @@ async def get_phone_numbers_from_urls_aio(urls: list[str], auto: bool = False):
     """
     Function for getting numbers from some url addresses.
     :param urls: List of links to HTML documents.
-    :param auto: Auto-add Moscow city code.
+    :param auto: Auto-add Moscow city code *495*.
+    :return: List of URLs with parsed numbers.
     """
     tasks = []
     for url in urls:
@@ -60,9 +61,10 @@ async def get_phone_numbers_from_urls_aio(urls: list[str], auto: bool = False):
 
 def get_phone_numbers_from_urls(urls: list[str], auto: bool = False):
     """
-    Synchronous wrapper for asynchronous function.
+    Synchronous wrapper for asynchronous function for getting numbers from some url addresses.
     :param urls: List of links to HTML documents.
-    :param auto: Auto-add Moscow city code.
+    :param auto: Auto-add Moscow city code *495*.
+    :return: List of URLs with parsed numbers.
     """
     return asyncio.run(get_phone_numbers_from_urls_aio(urls, auto))
 
